@@ -1,0 +1,10 @@
+cmake_minimum_required (VERSION 2.8.11)
+project (KUTINF)
+
+if (UNIX)
+  include_directories(Linux)
+  add_executable(KutinfLinux Linux/Kutinf.cpp Linux/Histogram.cpp Linux/Histogram.h)
+else()
+  include_directories(Windows)
+  add_executable(KutinfWindows Windows/Kutinf.cpp Windows/Histogram.cpp Windows/Histogram.h Windows/stdafx.cpp Windows/stdafx.h Windows/targetver.h)
+endif()
